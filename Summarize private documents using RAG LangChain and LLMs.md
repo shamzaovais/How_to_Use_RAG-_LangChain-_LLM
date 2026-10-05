@@ -1,29 +1,21 @@
-<p style="text-align:center">
-    <a href="https://skills.network" target="_blank">
-    <img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/assets/logos/SN_web_lightmode.png" width="200" alt="Skills Network Logo"  />
-    </a>
-</p>
-
-
-# **Summarize Private Documents Using RAG, LangChain, and LLMs**
-
-
-##### Estimated time needed: **45** minutes
+# ***How to use RAG, LangChain, and LLMs in your daily life***
 
 
 Imagine it's your first day at an exciting new job at a fast-growing tech company, Innovatech. You're filled with a mix of anticipation and nerves, eager to make a great first impression and contribute to your team. As you find your way to your desk, decorated with a welcoming note and some company swag, you can't help but feel a surge of pride. This is the moment you've been working towards, and it's finally here.
 
-Your manager, Alex, greets you with a warm smile. "Welcome aboard! We're thrilled to have you with us. I have sent you a folder. Inside this folder, you'll find everything you need to get up to speed on our company policies, culture, and the projects your team is working on. Please keep them private."
+Your manager greets you with a warm smile. "Welcome aboard! We're thrilled to have you with us. I have sent you a folder. Inside this folder, you'll find everything you need to get up to speed on our company policies, culture, and the projects your team is working on. Please keep them private."
 
-You thank Alex and open the folder, only to be greeted by a mountain of documents - manuals, guidelines, technical documents, project summaries, and more. It's overwhelming. You think to yourself, "How am I supposed to absorb all of this information in a short time? And they are private and I cannot just upload it to GPT to summarize them." "Why not create an agent to read and summarize them for you, and then you can just ask it?" your colleague, Jordan, suggests with an encouraging grin. You're intrigued, but uncertain; the world of large language models (LLMs) is one that you've only scratched the surface of. Sensing your hesitation, Jordan elaborates, "Imagine having a personal assistant who's not only exceptionally fast at reading but can also understand and condense the information into easy-to-digest summaries. That's what an LLM can do for you, especially when enhanced with LangChain and Retrieval-Augmented Generation (RAG) technology." 
+You thanks manager and open the folder, only to be greeted by a mountain of documents - manuals, guidelines, technical documents, project summaries, and more. It's overwhelming. You think to yourself, "How am I supposed to absorb all of this information in a short time? And they are private and I cannot just upload it to GPT to summarize them." "Why not create an agent to read and summarize them for you, and then you can just ask it?" your colleague suggests with an encouraging grin. You're intrigued, but uncertain; the world of large language models (LLMs) is one that you've only scratched the surface of. Sensing your hesitation, Jordan elaborates, "Imagine having a personal assistant who's not only exceptionally fast at reading but can also understand and condense the information into easy-to-digest summaries. That's what an LLM can do for you, especially when enhanced with LangChain and Retrieval-Augmented Generation (RAG) technology." 
 
-"But how do I get started? And how long will it take to set up something like that?" you ask. Jordan says, "Let's dive into a project that will not only help you tackle this immediate challenge but also equip you with a skill set that's becoming indispensable in this field."
+"But how do I get started? And how long will it take to set up something like that?" you ask. Your colleague says, "Let's dive into a project that will not only help you tackle this immediate challenge but also equip you with a skill set that's becoming indispensable in this field."
 
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/C-rBNv5ZbCn1Qe9a-c_RwQ.png" style="width:50%;margin:auto;display:flex" alt="indexing"/>
+<img width="1000" height="674" alt="image" src="https://github.com/user-attachments/assets/e6418e10-1469-4396-8811-dd75d1442d18" />
 
 ---------
 
 So, this project steps you through the fascinating world of LLMs and RAG, starting from the basics of what these technologies are, to building a practical application that can read and summarize documents for you. By the end of this tutorial, you have a working tool capable of processing the pile of documents on your desk, allowing you to focus on making meaningful contributions to your projects sooner.
+
+
 
 
 ## __Table of Contents__
@@ -69,12 +61,6 @@ So, this project steps you through the fascinating world of LLMs and RAG, starti
     </li>
 </ol>
 
-<a href="#Exercises">Exercises</a>
-<ol>
-    <li><a href="#Exercise-1:-Work-on-your-own-document">Exercise 1: Work on your own document</a></li>
-    <li><a href="#Exercise-2:-Return-the-source-from-the-document">Exercise 2: Return the source from the document</a></li>
-    <li><a href="#Exercise-3:-Use-another-LLM-model">Exercise 3: Use another LLM model</a></li>
-</ol>
 
 
 ## Background
@@ -103,7 +89,7 @@ The most common full sequence from raw data to answer looks like the following e
 
 3. Store: You need somewhere to store and index your splits so that they can later be searched. This is often done using a [VectorStore](https://python.langchain.com/docs/how_to/#vector-stores) and [Embeddings](https://python.langchain.com/docs/how_to/embed_text/) model.
 
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/WEE3pjeJvSZP0R7UL7CYTA.png" width="50%" alt="indexing"/> <br>
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/WEE3pjeJvSZP0R7UL7CYTA.png" width="100%" alt="indexing"/> <br>
 <span style="font-size: 10px;">[source](https://python.langchain.com/docs/tutorials/rag/)</span>
 
 
@@ -111,7 +97,7 @@ The most common full sequence from raw data to answer looks like the following e
 1. Retrieve: Given a user input, relevant splits are retrieved from storage using a retriever.
 2. Generate: A ChatModel / LLM produces an answer using a prompt that includes the question and the retrieved data.
 
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/SwPO26VeaC8VTZwtmWh5TQ.png" width="50%" alt="retrieval"/> <br>
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/SwPO26VeaC8VTZwtmWh5TQ.png" width="100%" alt="retrieval"/> <br>
 <span style="font-size: 10px;">[source](https://python.langchain.com/docs/tutorials/rag/)</span>
 
 
@@ -133,7 +119,7 @@ After completing this lab, you will be able to:
 
 For this lab, you are going to use the following libraries:
 
-*   [`ibm-watsonx-ai`](https://ibm.github.io/watson-machine-learning-sdk/index.html) for using LLMs from IBM's watsonx.ai
+*   [`ibm-watsonx-ai`](https://ibm.github.io/watson-machine-learning-sdk/index.html) Use any LLM ai model 
 *   [`LangChain`](https://www.langchain.com/) for using its different chain and prompt functions
 *   [`Hugging Face`](https://huggingface.co/models?other=embeddings) and [`Hugging Face Hub`](https://huggingface.co/models?other=embeddings) for their embedding methods for processing text data
 *   [`SentenceTransformers`](https://www.sbert.net/) for transforming sentences into high-dimensional vectors
@@ -143,7 +129,7 @@ For this lab, you are going to use the following libraries:
 
 ### Installing required libraries
 
-The following required libraries are __not__ preinstalled in the Skills Network Labs environment. __You must run the following cell__ to install them:
+The following required libraries are __not__ preinstalled in the Labs environment. __You must run the following cell__ to install them:
 
 **Note:** The version has been pinned here to specify the version. It's recommended that you do this as well. Even though the library will be updated in the future, the library could still support this lab work.
 
@@ -173,7 +159,6 @@ wget
 
 After the installation of libraries is completed, restart your kernel. You can do that by clicking the **Restart the kernel** icon.
 
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/rfWX6bPefx_DHiwFMktGBw/restart-kernel.jpg" style="width:80%;margin:auto;display:flex" alt="Restart kernel">
 
 
 ```python
@@ -225,7 +210,7 @@ print("All imports successful!")
 The document, which is provided in a TXT format, outlines some company policies and serves as an example data set for the project.
 
 This is the `load` step in `Indexing`.<br>
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/MPdUH7bXpHR5muZztZfOQg.png" width="50%" alt="split"/>
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/MPdUH7bXpHR5muZztZfOQg.png" width="100%" alt="split"/>
 
 
 ```python
@@ -254,7 +239,7 @@ From the content, you see that the document discusses nine fundamental policies 
 
 
 In this step, you are splitting the document into chunks, which is basically the `split` process in `Indexing`.
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/0JFmAV5e_mejAXvCilgHWg.png" width="50%" alt="split"/>
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/0JFmAV5e_mejAXvCilgHWg.png" width="100%" alt="split"/>
 
 
 `LangChain` is used to split the document and create chunks. It helps you divide a long story (document) into smaller parts, which are called `chunks`, so that it's easier to handle. 
@@ -275,7 +260,7 @@ From the ouput of print, you see that the document has been split into 16 chunks
 
 ### Embedding and storing
 This step is the `embed` and `store` processes in `Indexing`. <br>
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/u_oJz3v2cSR_lr0YvU6PaA.png" width="50%" alt="split"/>
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/u_oJz3v2cSR_lr0YvU6PaA.png" width="100%" alt="split"/>
 
 
 In this step, you're taking the pieces of the story, your "chunks," converting the text into numbers, and making them easier for your computer to understand and remember by using a process called "embedding." Think of embedding like giving each chunk its own special code. This code helps the computer quickly find and recognize each chunk later on. 
@@ -352,7 +337,7 @@ llm = WatsonxLLM(
 ```
 
 This completes the `LLM` part of the `Retrieval` task. <br>
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/UZXQ44Tgv4EQ2-mTcu5e-A.png" width="50%" alt="split"/>
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/UZXQ44Tgv4EQ2-mTcu5e-A.png" width="100%" alt="split"/>
 
 
 ## Integrating LangChain
@@ -582,22 +567,11 @@ qa()
 Congratulations! You have finished the project. Following are three exercises to help you extend your knowledge.
 
 
-# Exercises
 
+You are welcome to use your own document to practice. Another document has also been prepared that you can use for practice.
 
-### Exercise 1: Work on your own document
-
-
-You are welcome to use your own document to practice. Another document has also been prepared that you can use for practice. Can you load this document and make the LLM read it for you? <br>
-Here is the URL to the document: https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/XVnuuEg94sAE4S_xAsGxBA.txt
-
-
-```python
-# Add your code here
-```
 
 <details>
-    <summary>Click here for solution</summary>
 <br>
     
 ```python
@@ -611,18 +585,11 @@ print('file downloaded')
 </details>
 
 
-### Exercise 2: Return the source from the document
 
+Sometimes, you not only want the LLM to summarize for you, but you also want the model to return the exact content source from the document to you for reference.
 
-Sometimes, you not only want the LLM to summarize for you, but you also want the model to return the exact content source from the document to you for reference. Can you adjust the code to make it happen?
-
-
-```python
-# Add your code here
-```
 
 <details>
-    <summary>Click here for a hint</summary>
 All you must do is change the return_source_documents to True when you create the chain. And when you print, print the ['source_documents'][0] 
 <br><br>
 
@@ -634,11 +601,7 @@ results = qa.invoke(query)
 print(results['source_documents'][0]) ## this will return you the source content
 ```
 
-</details>
 
-
-<details>
-    <summary>Click here for solution</summary>
    
 ```python
 qa = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=docsearch.as_retriever(), return_source_documents=True)
@@ -650,18 +613,7 @@ print(results['source_documents'][0]) ## this will return you the source content
 </details>
 
 
-### Exercise 3: Use another LLM model
 
-
-IBM watsonx.ai also has many other LLM models that you can use; for example, `mistralai/mistral-small-3-1-24b-instruct-2503`, an open-source model from Mistral AI. Can you change the model to see the difference of the response?
-
-
-```python
-# Add your code here
-```
-
-<details>
-    <summary>Click here for a hint</summary>
 
 To use the Mistral model in your notebook, go to the cell where the `model_id` is specified to `meta-llama/llama-4-maverick-17b-128e-instruct-fp8` and replace the current `model_id` with the following code. Expect different results and performance when using other models. 
 
@@ -674,73 +626,4 @@ After updating, run the remaining cells in the notebook to ensure the Granite mo
 
 </details>
 
-
-## Authors
-
-
-[Kang Wang](https://author.skills.network/instructors/kang_wang) <br>
-Kang Wang is a Data Scientist Intern in IBM. He is also a PhD Candidate in the University of Waterloo.
-
-[Faranak Heidari](https://www.linkedin.com/in/faranakhdr/) <br>
-Faranak Heidari is a Data Scientist Intern in IBM with a strong background in applied machine learning. Experienced in managing complex data to establish business insights and foster data-driven decision-making in complex settings such as healthcare. She is also a PhD candidate at the University of Toronto.
-
-
-### Other Contributors
-
-
-[Sina Nazeri](https://author.skills.network/instructors/sina_nazeri) <br>
-I am grateful to have had the opportunity to work as a Research Associate, Ph.D., and IBM Data Scientist. Through my work, I have gained experience in unraveling complex data structures to extract insights and provide valuable guidance.
-
-[Wojciech Fulmyk](https://author.skills.network/instructors/wojciech_fulmyk) <br>
-As a data scientist at the Ecosystems Skills Network at IBM and a Ph.D. candidate in Economics at the University of Calgary, I bring a wealth of experience in unraveling complex problems through the lens of data. What sets me apart is my ability to seamlessly merge technical expertise with effective communication, translating intricate data findings into actionable insights for stakeholders at all levels. From modeling to storytelling, I bring a holistic approach to data science. Leveraging machine learning algorithms, I construct predictive models tailored to both real-world challenges as well as old, well-understood problems. My knack for data-driven storytelling ensures that the insights uncovered resonate with both technical and non-technical audiences. Open to collaboration, I'm eager to take on new challenges and contribute to transformative data-driven endeavors. Whether you seek to extract insights, enhance predictive models, or explore untapped potential within your datasets, I'm here to help. Feel free to connect to me via my LinkedIn profile. Let's learn from each other!
-
-
-```{## Change Log}
-```
-
-
-```{|Date (YYYY-MM-DD)|Version|Changed By|Change Description||-|-|-|-||2024-03-22|0.1|Kang Wang|Create the Project|}
-```
-
-
-© Copyright IBM Corporation. All rights reserved.
-
-
-```python
-import json
-
-# Load your notebook file safely
-filename = "Summarize private documents using RAG LangChain and LLMs.ipynb"
-
-with open(filename, "r", encoding="utf-8") as f:
-    nb = json.load(f)
-
-# Extract and convert cells to a clean markdown document
-markdown_lines = []
-for cell in nb.get("cells", []):
-    cell_type = cell.get("cell_type")
-    source = cell.get("source", "")
-    
-    # Handle source if it's stored as a list of strings
-    if isinstance(source, list):
-        source_text = "".join(source)
-    else:
-        source_text = source
-
-    if cell_type == "markdown":
-        markdown_lines.append(source_text + "\n\n")
-    elif cell_type == "code":
-        markdown_lines.append("```python\n" + source_text + "\n```\n\n")
-
-# Save as a clean markdown file
-output_filename = "Summarize private documents using RAG LangChain and LLMs.md"
-with open(output_filename, "w", encoding="utf-8") as f:
-    f.writelines(markdown_lines)
-
-print(f"Successfully created clean markdown file: {output_filename}")
-```
-
-```python
-
-```
 

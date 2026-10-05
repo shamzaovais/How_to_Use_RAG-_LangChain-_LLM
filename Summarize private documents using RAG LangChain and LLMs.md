@@ -564,7 +564,7 @@ To **stop** the agent, you can type in 'quit', 'exit', 'bye'. Otherwise you cann
 qa()
 ```
 
-Congratulations! You have finished the project. Following are three exercises to help you extend your knowledge.
+Congratulations! You have finished the project. Following are three test cases to help you extend your knowledge.
 
 
 

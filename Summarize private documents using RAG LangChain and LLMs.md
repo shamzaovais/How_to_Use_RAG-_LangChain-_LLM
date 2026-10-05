@@ -344,7 +344,7 @@ This completes the `LLM` part of the `Retrieval` task. <br>
 
 
 LangChain has a number of components that are designed to help retrieve information from the document and build question-answering applications, which helps you complete the `retrieve` part of the `Retrieval` task. <br>
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/M4WpkkMMbfK0Wkz0W60Jiw.png" width="50%" alt="split"/>
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/M4WpkkMMbfK0Wkz0W60Jiw.png" width="100%" alt="split"/>
 
 
 In the following steps, you create a simple Q&A application over the document source using LangChain's `RetrievalQA`.
@@ -384,7 +384,7 @@ Now, you've created a simple Q&A application for your own document. Congratulati
 
 This section dives deeper into how you can improve this application. You might want to ask "How to add the prompt in retrieval using LangChain?" <br>
 
-<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/bvw3pPRCYRUsv-Z2m33hmQ.png" width="50%" alt="split"/>
+<img src="https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/bvw3pPRCYRUsv-Z2m33hmQ.png" width="100%" alt="split"/>
 
 
 You use prompts to guide the responses from an LLM the way you want. For instance, if the LLM is uncertain about an answer, you instruct it to simply state, "I do not know," instead of attempting to generate a speculative response.
@@ -571,7 +571,6 @@ Congratulations! You have finished the project. Following are three exercises to
 You are welcome to use your own document to practice. Another document has also been prepared that you can use for practice.
 
 
-<details>
 <br>
     
 ```python
@@ -582,14 +581,11 @@ wget.download(url, out=filename)
 print('file downloaded')
 ```
 
-</details>
 
 
 
 Sometimes, you not only want the LLM to summarize for you, but you also want the model to return the exact content source from the document to you for reference.
 
-
-<details>
 All you must do is change the return_source_documents to True when you create the chain. And when you print, print the ['source_documents'][0] 
 <br><br>
 
@@ -610,8 +606,6 @@ results = qa.invoke(query)
 print(results['source_documents'][0]) ## this will return you the source content
 ```
 
-</details>
-
 
 
 
@@ -623,7 +617,5 @@ model_id = 'mistralai/mistral-small-3-1-24b-instruct-2503'
 </br>
 
 After updating, run the remaining cells in the notebook to ensure the Granite model is used for subsequent operations.
-
-</details>
 
 

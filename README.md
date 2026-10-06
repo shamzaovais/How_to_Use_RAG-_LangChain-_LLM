@@ -618,3 +618,18 @@ model_id = 'mistralai/mistral-small-3-1-24b-instruct-2503'
 
 After updating, run the remaining cells in the notebook to ensure the Granite model is used for subsequent operations.
 
+## Acknowledgments & Credits
+
+This blog post and implementation tutorial are inspired by and adapted from foundational learning materials provided by **Skills Network and IBM**. Special thanks to the original creators and contributors for developing such an insightful hands-on project: 
+
+### Original Authors:
+* **Kang Wang** – Data Scientist Intern at IBM & Ph.D. Candidate at the University of Waterloo[cite: 2].
+* **Faranak Heidari** – Data Scientist Intern at IBM & Ph.D. Candidate at the University of Toronto[cite: 2]. 
+
+### Other Contributors:
+* **Sina Nazeri** – Research Associate, Ph.D., and IBM Data Scientist[cite: 2]. 
+* **Wojciech Fulmyk** – Ecosystems Data Scientist at IBM & Ph.D. Candidate in Economics at the University of Calgary[cite: 2].
+
+Special appreciation goes to **IBM watsonx.ai** for providing the robust foundation model infrastructure that powers the LLM capabilities demonstrated in this tutorial[cite: 2].
+
+
